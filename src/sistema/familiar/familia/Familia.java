@@ -25,14 +25,24 @@ public class Familia {
 
             if (familia[i] != null) {
                 System.out.println("-" + i + " " + familia[i].getNombre() + "," + familia[i].getApellido() + "," + familia[i].getEdad());
-                System.out.println(lugar);
+                // System.out.println(lugar);
             } else {
                 break;
             }
 
-
         }
     }
 
+    public void eliminarPersona(int id){
+
+        if (id == 19) {
+            familia[id] = null;
+        } else {
+            familia[id] = familia[id + 1];
+        }
+
+
+    }
 
 }
+
