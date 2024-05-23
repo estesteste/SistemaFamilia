@@ -35,7 +35,7 @@ public class Familia {
 
     public void eliminarPersona(int id){
 
-        if (id == 19) {
+        if (id >= 19) {
             familia[id] = null;
         } else {
             familia[id] = familia[id + 1];

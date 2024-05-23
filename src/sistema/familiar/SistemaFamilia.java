@@ -25,7 +25,10 @@ public class SistemaFamilia {
         Familia f = new Familia();
 
         f.agregarPersona(nombre, apellido, Edad);
+        f.eliminarPersona(0);
         f.listarFamilia();
+
+
 
         }
     }
