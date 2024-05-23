@@ -4,36 +4,36 @@ import sistema.familiar.persona.Persona;
 
 public class Familia {
 
-    private Persona familia[] = new Persona[20];
+    private final Persona[] familia = new Persona[20];
     private int lugar = 0;
 
     public void agregarPersona(String nombre, String apellido, int edad) {
+        familia[lugar] = new Persona(nombre, apellido, edad);
+        System.out.println("La persona se agregó con éxito.");
 
-        Persona nuevaPersona = new Persona(nombre,apellido,edad);
-
-        familia[lugar] = nuevaPersona;
-        lugar = lugar + 1;
-
-        if (lugar >=19) {
-            System.out.print("No hay espacio en la Familia.");
+        if (lugar >= 20) {
+            System.out.println("No hay espacio en la Familia.");
             lugar = 0;
         }
     }
 
     public void listarFamilia() {
+        System.out.println("LISTA DE MIEMBROS");
+
+        int miembrosActuales = 0;
+
         for (int i = 0; i < familia.length; i++) {
-
             if (familia[i] != null) {
-                System.out.println("-" + i + " " + familia[i].getNombre() + "," + familia[i].getApellido() + "," + familia[i].getEdad());
-                // System.out.println(lugar);
-            } else {
-                break;
-            }
+                miembrosActuales++;
+                System.out.println("\t" + (i + 1) + "\t\t" + familia[i].getNombre() + " " + familia[i].getApellido());
 
+            } else System.out.println("\t" + (i + 1) + "\t\t-");
         }
+
+        if (miembrosActuales == 0) System.out.println("No hay personas registradas.");
     }
 
-    public void eliminarPersona(int id){
+    public void eliminarPersona(int id) {
 
         if (id >= 19) {
             familia[id] = null;
