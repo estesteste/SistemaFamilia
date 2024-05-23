@@ -13,6 +13,7 @@ public class SistemaFamilia {
             String apellido;
             int edad;
 
+            scan.nextLine();
 
             System.out.println("Nombre:");
             nombre = scan.nextLine();
